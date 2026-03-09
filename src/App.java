@@ -8,6 +8,7 @@ public class App {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         Usuario usuarioLogado = null;
 
+
         System.out.println("=================================");
         System.out.println("==           Bem Vindo         ==");
         System.out.println("=================================");
@@ -115,7 +116,7 @@ public class App {
                         }
 
                     } while (rodandoUser);
-
+                    break;
                 case "2":
                     boolean rodandoLivros = true;
                     do {
@@ -170,10 +171,13 @@ public class App {
                                 } else {
                                     for (int i = 0; i < livros.size(); i++) {
                                         Livros u = livros.get(i);
-                                        System.out.println((i + 1) + "Titulo: " + u.getTitulo());
+                                        System.out.println((i + 1) + u.getTitulo() + "; " + u.getAutor() + "; " + u.getGenero() + "; " );
                                     }
                                 }
-
+                            case "0":
+                                rodandoLivros = false;
+                                System.out.println("Voltando...");
+                                break;
                             default:
                                 break;
                         }
@@ -187,7 +191,7 @@ public class App {
                     break;
 
                 default:
-                    System.out.println(" Opção inválida! Digite 0, 1, ou 3.");
+                    System.out.println(" Opção inválida! ");
                     break;
             }
         } while (rodandoMenu);
